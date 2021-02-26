@@ -19,7 +19,7 @@
         </ul>
 
         <div class="dropdown" *ngIf="(accountService.currentUser$ | async) as appUser" dropdown>
-            <img src="{{ appUser.photoUrl }}" alt="{{ appUser.username | titlecase}}">
+            <img src="{{ appUser.photoUrl || './assets/user.png' }}" alt="{{ appUser.username | titlecase}}">
             <a class="dropdown-toggle text-light ml-2" dropdownToggle>Welcome {{appUser.username | titlecase}}</a>
             <div class="dropdown-menu mt-3" *dropdownMenu>
                 <a routerLink="/member/edit" class="dropdown-item">Edit Profile</a>
